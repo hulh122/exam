@@ -1,0 +1,11 @@
+.home {
+    height: calc(100vh - 4vw);
+    padding: 2vw 4vw;
+}
+
+.button-container {
+    padding-top: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
