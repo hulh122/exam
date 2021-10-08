@@ -1,10 +1,19 @@
+import { BookDecorationQuiz } from '../quiz/book-decoration-quizs';
+
 export enum Status {
     Home,
-    Exam
+    Exam,
+    Summary
 }
 
 export enum Mode {
     Chapter,
-    Sequence,
     Random,
+    Mistake
+}
+
+export interface FinishData {
+    wrongQuizs: BookDecorationQuiz[];
+    correctRate: number;
+    correctRateHint: string;
 }

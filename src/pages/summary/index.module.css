@@ -1,0 +1,14 @@
+.card-container {
+    width: 100%;
+    max-height: 50vh;
+    overflow: scroll;
+}
+
+.card {
+    width: 100%;
+    padding: 2vw;
+    text-align: left;
+    border: 1px solid black;
+    margin-bottom: 5vw;
+    border-radius: 2px;
+}

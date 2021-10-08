@@ -3,16 +3,54 @@
 }
 
 .button-container {
-    margin-top: 10vw;
+    margin-top: 20vw;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .nav {
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
 }
 
 .nav-btn {
     position: absolute;
     right: 4vw;
 }
+
+.selector-container {
+    display: grid;
+    width: 40vw;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vw;
+}
+
+.selector-box {
+    width: 6vw;
+    height: 6vw;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1890ff;
+    color: white;
+}
+
+.selector-box-finished {
+    background: lightgreen;
+}
+
+.chapter-select-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chapter-select-btn {
+    width: 30vw;
+    margin: 5vw 0;
+}
+
+
