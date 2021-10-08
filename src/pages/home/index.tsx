@@ -41,7 +41,7 @@ export const Home = () => {
                     <>
                         <h2>瑶瑶一定能过！</h2>
 
-                        <h3>书籍装订考试时间：10/16</h3>
+                        <h3>书籍装帧考试时间：10/16</h3>
 
                         <div className={ styles['button-container'] }>
                             <Button type="primary"
