@@ -14,21 +14,20 @@ export const NounsExplain: FC<NounsExplainProps> = ({ backHome }) => {
     const [index, setIndex] = useState<number>(0);
     const [activeNoun, setActiveNoun] = useState<Noun>();
     const [index2Answer, setIndex2Answer] = useState<Record<number, string>>({});
-    const nounsRef = useRef<Noun[]>([]);
-
-    useEffect(() => {
-        nounsRef.current = getShuffleNouns();
-    }, []);
+    const [activeKey, setActiveKey] = useState<string>();
+    const nounsRef = useRef<Noun[]>(getShuffleNouns());
 
     useEffect(() => {
         setActiveNoun(nounsRef.current[index]);
     }, [nounsRef.current, index])
 
     const toPreNoun = () => {
+        setActiveKey(undefined);
         setIndex((oldIndex) => oldIndex - 1);
     }
 
     const toNextNoun = () => {
+        setActiveKey(undefined);
         setIndex((oldIndex) => oldIndex + 1);
     }
 
@@ -71,7 +70,9 @@ export const NounsExplain: FC<NounsExplainProps> = ({ backHome }) => {
                 activeNoun && (
                     <div className={ styles.content }>
                         <h3>名词：</h3>
-                        <Collapse>
+                        <Collapse activeKey={ activeKey } onChange={ (key) => {
+                            setActiveKey(key as string);
+                        } }>
                             <CollapsePanel key={ 1 } header={ activeNoun.title }>
                                 { activeNoun.explanation }
                             </CollapsePanel>
@@ -101,17 +102,17 @@ interface NounsSelectorProps {
 
 const NounsSelector: FC<NounsSelectorProps> = ({ nouns, setIndex, index }) => {
     return (
-       <div className={styles['nouns-selector-container']}>
-           {
-               nouns.map(({title}, idx) => (
-                   <Button type={idx === index ? 'primary' : 'default'}
-                           shape="round"
-                           onClick={() => {
-                               setIndex(idx);
-                           }}
-                           key={title}>{title}</Button>
-               ))
-           }
-       </div>
+        <div className={ styles['nouns-selector-container'] }>
+            {
+                nouns.map(({ title }, idx) => (
+                    <Button type={ idx === index ? 'primary' : 'default' }
+                            shape="round"
+                            onClick={ () => {
+                                setIndex(idx);
+                            } }
+                            key={ title }>{ title }</Button>
+                ))
+            }
+        </div>
     )
 }
