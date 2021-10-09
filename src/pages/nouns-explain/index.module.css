@@ -14,9 +14,26 @@
 }
 
 .nouns-selector-container {
-    width: 40vw;
+    width: 90vw;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 2vw;
     row-gap: 2vw;
+}
+
+@media only screen
+and (min-device-width: 1024px)
+and (max-device-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 1.5) {
+    .nouns-selector-container {
+        width: 60vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2vw;
+        row-gap: 2vw;
+    }
+}
+
+.block {
+    width: 32px;
 }

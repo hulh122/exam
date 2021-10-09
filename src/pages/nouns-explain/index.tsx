@@ -15,7 +15,11 @@ export const NounsExplain: FC<NounsExplainProps> = ({ backHome }) => {
     const [activeNoun, setActiveNoun] = useState<Noun>();
     const [index2Answer, setIndex2Answer] = useState<Record<number, string>>({});
     const [activeKey, setActiveKey] = useState<string>();
-    const nounsRef = useRef<Noun[]>(getShuffleNouns());
+    const nounsRef = useRef<Noun[]>([]);
+
+    useEffect(() => {
+        nounsRef.current = getShuffleNouns();
+    }, []);
 
     useEffect(() => {
         setActiveNoun(nounsRef.current[index]);
@@ -40,7 +44,7 @@ export const NounsExplain: FC<NounsExplainProps> = ({ backHome }) => {
                                 type="primary"
                                 shape="circle"
                                 icon={ <LeftOutlined/> }/>
-                    ) : (<div/>)
+                    ) : (<div className={ styles.block }/>)
                 }
                 <h2 className={ styles['header-word'] }>
                     <Popover content={ <NounsSelector nouns={ nounsRef.current }
@@ -62,7 +66,7 @@ export const NounsExplain: FC<NounsExplainProps> = ({ backHome }) => {
                                 type="primary"
                                 shape="circle"
                                 icon={ <RightOutlined/> }/>
-                    ) : (<div/>)
+                    ) : (<div className={ styles.block }/>)
                 }
             </div>
 
