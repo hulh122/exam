@@ -3,13 +3,14 @@ import { BookDecorationQuiz } from '../quiz/book-decoration-quizs';
 export enum Status {
     Home,
     Exam,
+    NounsExplain,
     Summary
 }
 
 export enum Mode {
     Chapter,
     Random,
-    Mistake
+    Mistake,
 }
 
 export interface FinishData {

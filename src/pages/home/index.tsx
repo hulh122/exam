@@ -5,6 +5,7 @@ import { FinishData, Mode, Status } from '../../data/interface';
 import { Button, message } from 'antd';
 import { Summary } from '../summary';
 import { getMistakeQuizIds, setMistakeQuizs } from '../../utils/storage';
+import { NounsExplain } from '../nouns-explain';
 
 export const Home = () => {
     const [status, setStatus] = useState<Status>(Status.Home);
@@ -60,6 +61,12 @@ export const Home = () => {
                                     shape="round"
                                     onClick={ handleMistakeBtn }>错题巩固
                             </Button>
+                            <Button type="primary"
+                                    shape="round"
+                                    onClick={ () => {
+                                        setStatus(Status.NounsExplain)
+                                    } }>名词解释
+                            </Button>
                         </div>
                     </>
                 )
@@ -68,6 +75,12 @@ export const Home = () => {
             {
                 status === Status.Exam && (
                     <Exam mode={ mode! } backHome={ backHome } finishExam={ finishExam }/>
+                )
+            }
+
+            {
+                status === Status.NounsExplain && (
+                    <NounsExplain backHome={backHome}/>
                 )
             }
 

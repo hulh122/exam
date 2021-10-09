@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    text-align: left;
+    margin-top: 5vh;
+}
+
+.header-word {
+    display: flex;
+    align-items: center;
+}
+
+.nouns-selector-container {
+    width: 40vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2vw;
+    row-gap: 2vw;
+}
