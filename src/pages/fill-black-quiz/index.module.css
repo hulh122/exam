@@ -53,4 +53,13 @@
     margin: 5vw 0;
 }
 
+@media only screen
+and (min-device-width: 1024px)
+and (max-device-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 1.5) {
+    .answer-input {
+        height: 10vh;
+        font-size: 3vh;
+    }
+}
 

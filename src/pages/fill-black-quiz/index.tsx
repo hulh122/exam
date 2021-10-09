@@ -22,6 +22,7 @@ export const FillBlackQuiz: FC<FillBlackQuizProps> = ({ quiz, index, answer, set
             <h4 style={ { marginTop: '10vw' } }>
                 答案：
                 <Input value={ answer }
+                       className={styles['answer-input']}
                        onChange={ (e) => {
                            setAnswers(e.target.value);
                        } }/>

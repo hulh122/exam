@@ -57,7 +57,7 @@ export const Exam: FC<ExamProps> = ({ mode, backHome, finishExam }) => {
                 if (typeof answer === 'string') {
                     return inputAnswers[index] !== answer;
                 }
-                return inputAnswers[index] !== answer.join(',');
+                return inputAnswers[index] !== answer.join(',') && inputAnswers[index] !== answer.join('，');
             })
             const correctRate = Math.floor(100 * (quizsRef.current.length - wrongQuizs.length) / quizsRef.current.length);
             const correctRateHint = `${ quizsRef.current.length - wrongQuizs.length } / ${ quizsRef.current.length }`;
