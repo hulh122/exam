@@ -4,6 +4,7 @@ export enum Status {
     Home,
     Exam,
     NounsExplain,
+    ShortAnswer,
     Summary
 }
 

@@ -6,6 +6,7 @@ import { Button, message } from 'antd';
 import { Summary } from '../summary';
 import { getMistakeQuizIds, setMistakeQuizs } from '../../utils/storage';
 import { NounsExplain } from '../nouns-explain';
+import { ShortAnswerQuiz } from '../short-answer-quiz';
 
 export const Home = () => {
     const [status, setStatus] = useState<Status>(Status.Home);
@@ -67,6 +68,12 @@ export const Home = () => {
                                         setStatus(Status.NounsExplain)
                                     } }>名词解释
                             </Button>
+                            <Button type="primary"
+                                    shape="round"
+                                    onClick={ () => {
+                                        setStatus(Status.ShortAnswer)
+                                    } }>简答题
+                            </Button>
                         </div>
                     </>
                 )
@@ -80,7 +87,13 @@ export const Home = () => {
 
             {
                 status === Status.NounsExplain && (
-                    <NounsExplain backHome={backHome}/>
+                    <NounsExplain backHome={ backHome }/>
+                )
+            }
+
+            {
+                status === Status.ShortAnswer && (
+                    <ShortAnswerQuiz backHome={ backHome }/>
                 )
             }
 
