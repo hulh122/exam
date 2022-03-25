@@ -41,17 +41,11 @@ export const Home = () => {
             {
                 status === Status.Home && (
                     <>
-                        <h2>瑶瑶一定能过！</h2>
+                        <h2>马上升本了！</h2>
 
-                        <h3>书籍装帧考试时间：10/16</h3>
+                        <h3>考试时间：4/*</h3>
 
                         <div className={ styles['button-container'] }>
-                            <Button type="primary"
-                                    shape="round"
-                                    onClick={ () => {
-                                        start(Mode.Chapter)
-                                    } }>章节练习
-                            </Button>
                             <Button type="primary"
                                     shape="round"
                                     onClick={ () => {
